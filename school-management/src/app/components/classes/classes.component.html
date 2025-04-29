@@ -1,0 +1,25 @@
+<!-- <p>classes works!</p> -->
+<div class="container">
+    <h2 class="my-4">Classes</h2>
+
+    <!-- Add New Class Button -->
+    <button class="btn btn-success mb-3" (click)="addClass()">
+        <i class="bi bi-plus-lg"></i> Add New Class
+    </button>
+
+    <!-- Classes List -->
+    <div class="list-group">
+        <div *ngFor="let classItem of classes"
+            class="list-group-item d-flex justify-content-between align-items-center">
+            <div>
+                <h5>{{ classItem.name }}</h5>
+                <p>Teacher: {{ classItem.teacher }}</p>
+                <p>Students: {{ classItem.students.length }}</p>
+            </div>
+
+            <button class="btn btn-primary" (click)="viewClassDetails(classItem.id)">
+                View Details
+            </button>
+        </div>
+    </div>
+</div>

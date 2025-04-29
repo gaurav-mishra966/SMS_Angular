@@ -1,0 +1,18 @@
+.container {
+  margin-top: 20px;
+}
+
+.mwl-calendar-month-view {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #fff;
+}
+
+.mwl-calendar-day {
+  cursor: pointer;
+}
+
+.mwl-calendar-day:hover {
+  background-color: #f0f0f0;
+}

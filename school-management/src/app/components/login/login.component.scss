@@ -1,0 +1,111 @@
+/* src/app/login/login.component.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  height: 100%;
+  font-family: "Roboto", sans-serif;
+  background-color: #f4f7fb;
+}
+
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url("https://images.unsplash.com/5/unsplash-kitsune-4.jpg?ixlib=rb-0.3.5&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjEyMDd9&s=ce40ce8b8ba365e5e6d06401e5485390"); /* Use any background image you like */
+  background-size: cover;
+  background-position: center;
+}
+
+.login-container {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  padding: 30px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.login-header h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+.login-form .form-group {
+  margin-bottom: 15px;
+}
+
+.login-form .form-group label {
+  font-size: 14px;
+  color: #333;
+}
+
+.login-form .form-group input {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  margin-top: 5px;
+  background-color: #f8f8f8;
+}
+
+.login-form .form-group input:focus {
+  border-color: #007bff;
+  outline: none;
+  background-color: #fff;
+}
+
+.login-form .form-group button {
+  padding: 12px;
+  font-size: 16px;
+  color: white;
+  background-color: #67ae6e;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login-form .form-group button:hover {
+  background-color: #328e6e;
+}
+
+.form-footer {
+  margin-top: 20px;
+}
+
+.form-footer a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.form-footer a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .login-container {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .login-header h2 {
+    font-size: 20px;
+  }
+
+  .login-form .form-group input {
+    font-size: 14px;
+  }
+
+  .login-form .form-group button {
+    font-size: 14px;
+  }
+}

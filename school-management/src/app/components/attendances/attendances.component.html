@@ -1,0 +1,40 @@
+<div class="container">
+    <h2 class="my-4">Attendance</h2>
+
+    <!-- Attendance Table -->
+    <table class="table table-bordered">
+        <thead class="thead-light">
+            <tr>
+                <th>Name</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let student of students" [ngClass]="{
+              'present-row': student.status === 'present',
+              'absent-row': student.status === 'absent'
+            }">
+                <td>{{ student.name }}</td>
+                <td>
+                    <span [ngClass]="{
+              'badge badge-success': student.status === 'present',
+              'badge badge-danger': student.status === 'absent'
+            }">
+                        {{ student.status | titlecase }}
+                    </span>
+                </td>
+                <td>
+                    <button class="btn btn-outline-info" (click)="toggleAttendance(student)">
+                        Toggle Status
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Save Attendance Button -->
+    <button class="btn btn-outline-success mt-3" (click)="saveAttendance()">
+        Save Attendance
+    </button>
+</div>

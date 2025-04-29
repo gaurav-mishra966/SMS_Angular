@@ -1,0 +1,75 @@
+<!-- Main Content: Displayed when logged in -->
+<div *ngIf="isLoggedIn" class="d-flex flex-column flex-lg-row" style="height: 100vh;">
+  <!-- Sidebar -->
+  <div class="sidebar bg-dark text-white p-4" style="width: 250px; height: 100vh;">
+    <h3 class="text-center">School Management</h3>
+    <ul class="nav flex-column mt-4">
+      <li class="nav-item">
+
+        <a class="nav-link text-white" [routerLink]="['/dashboard']" routerLinkActive="active">Dashboard</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" [routerLink]="['/students']" routerLinkActive="active">Students</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" routerLink="/classes" routerLinkActive="active">Classes</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" routerLink="/attendance" routerLinkActive="active">Attendance</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link text-white" [routerLink]="['/calender']" routerLinkActive="active">Calender</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" [routerLink]="['/infographics']" routerLinkActive="active">InfoGraphics</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" routerLink="" routerLinkActive="active" (click)="logout()">Logout</a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Main Content Section -->
+  <div class="main-content flex-fill d-flex flex-column">
+    <!-- Topbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+      <a class="navbar-brand" href="#" style="margin-left: 20px;">School Dashboard</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <!-- <ul class="navbar-nav ml-auto w-100 d-flex justify-content-end"> -->
+        <!-- Search Form -->
+        <!-- <li class="nav-item">
+            <form class="form-inline d-flex w-auto justify-content-end" (ngSubmit)="searchStudents()">
+              <input class="form-control mr-2" type="search" placeholder="Search students" aria-label="Search"
+                [(ngModel)]="searchTerm" name="searchTerm" (input)="searchStudents()">&nbsp;
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+          </li> -->
+        <!-- Logout Button -->
+        <!-- <li class="nav-item">
+            <button class="btn btn-outline-danger" (click)="logout()">Logout</button>
+          </li>
+        </ul> -->
+      </div>
+    </nav>
+    <router-outlet></router-outlet>
+
+    <!-- Content Area (Filtered Students List) -->
+    <div class="container-fluid p-4">
+
+      <!-- Display filtered students -->
+      <!-- <ul>
+        <li *ngFor="let student of filteredStudents">
+          {{ student.name }} - {{ student.grade }}
+        </li>
+      </ul> -->
+    </div>
+  </div>
+</div>
+
+<!-- Login Component: Displayed when not logged in -->
+<app-login *ngIf="!isLoggedIn"></app-login>

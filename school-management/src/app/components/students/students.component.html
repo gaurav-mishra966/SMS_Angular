@@ -1,0 +1,57 @@
+<div class="container-fluid mt-4">
+    <!-- Header Section -->
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-center mb-4">
+        <h2 class="mb-3 mb-md-0">Student List</h2>
+        <button class="btn btn-success" (click)="addStudent()">
+            <i class="bi bi-plus-lg"></i> Add New Student
+        </button>
+    </div>
+
+    <!-- Search Bar -->
+    <div class="row mb-4">
+        <div class="col-md-6 col-lg-4">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search students" [(ngModel)]="searchTerm"
+                    (input)="searchStudents()" />
+                <span class="input-group-text bg-success text-white">
+                    <i class="bi bi-search"></i>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Student Table -->
+    <div class="table-responsive shadow-sm border rounded bg-white">
+        <table class="table table-hover table-bordered align-middle mb-0">
+            <thead class="table-light text-center">
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Grade</th>
+                    <th scope="col">ID</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let student of filteredStudents" class="text-center">
+                    <td class="text-capitalize">{{ student.name }}</td>
+                    <td>{{ student.grade }}</td>
+                    <td>{{ student.id }}</td>
+                    <td>
+                        <button class="btn btn-outline-primary btn-sm" (click)="viewStudentDetails(student.id)">
+                            View Details
+                        </button>
+                        <button class="btn btn-outline-warning btn-sm" (click)="editStudent(student.id)">
+                            Edit
+                        </button>
+                        <button class="btn btn-outline-danger btn-sm" (click)="deleteStudent(student.id)">
+                            Delete
+                        </button>
+                    </td>
+                </tr>
+                <tr *ngIf="filteredStudents.length === 0">
+                    <td colspan="4" class="text-center text-muted">No students found.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
