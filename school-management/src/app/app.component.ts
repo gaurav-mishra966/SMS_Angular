@@ -12,13 +12,7 @@ import { CalendarComponent } from './components/calendar/calendar.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [
-    CommonModule,
-    FormsModule,
-    LoginComponent,
-    RouterModule,
-    CalendarComponent,
-  ],
+  imports: [CommonModule, FormsModule, LoginComponent, RouterModule],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
